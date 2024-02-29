@@ -28,10 +28,10 @@ public class appDaoImpl implements appDao {
 		String apiKey = "7c3dbdcf13faf65896dd742d3390f5ad";
 
 		// Create the URL for the OpenWeatherMap API request
-		String apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
+		String Url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
 
 		try {
-			URL url = new URL(apiUrl);
+			URL url = new URL(Url);
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 			connection.setRequestMethod("GET");
 
@@ -46,7 +46,6 @@ public class appDaoImpl implements appDao {
 				responseContent.append(scanner.nextLine());
 			}
 
-			// System.out.println(responseContent);
 			scanner.close();
 
 			// Parse the JSON response to extract temperature, date, and humidity
